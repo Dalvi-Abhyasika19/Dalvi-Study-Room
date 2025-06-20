@@ -1,0 +1,18 @@
+
+<!DOCTYPE html>
+<html>
+<head><title>Student Dashboard</title></head>
+<body>
+    <h2>All Students</h2>
+    <a href="/admission">Add New Student</a><br><br>
+    <table border="1">
+        <tr><th>ID</th><th>Name</th><th>Phone</th><th>Course</th><th>Receipt</th></tr>
+        {% for s in students %}
+        <tr>
+            <td>{{ s[0] }}</td><td>{{ s[1] }}</td><td>{{ s[2] }}</td><td>{{ s[3] }}</td>
+            <td><a href="/receipt/{{ s[0] }}">Download</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
